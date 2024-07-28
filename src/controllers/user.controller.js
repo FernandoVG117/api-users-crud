@@ -9,9 +9,12 @@ const getAll = catchError(async(req,res) => {
 
 // Controller Create (with sequalize is .create() )
 const create = catchError(async(req,res) => {
-    const result = await User.create(res.doby)
+    const result = await User.create(req.doby)
     return res.status(201).json(result)
 })
+
+// Controller Create (with sequalize is .create() )
+// const getOne = catchError(async(req,res))
 
 module.exports = {
     getAll,
