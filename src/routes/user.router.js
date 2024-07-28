@@ -1,9 +1,12 @@
-const { getAll, create } = require('../controllers/user.controller');
+const { getAll, create, getOne } = require('../controllers/user.controller');
 const express = require('express');
 const userRouter = express.Router();
 
 userRouter.route('/')
     .get(getAll)
     .post(create)
+
+userRouter.route('/:id')
+    .get(getOne)
 
 module.exports = userRouter;
